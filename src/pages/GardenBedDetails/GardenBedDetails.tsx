@@ -37,6 +37,7 @@ const GardenBedDetails = (): JSX.Element => {
   return ( 
     <main >
       <h1>{gardenBedDetails.name}</h1>
+      <h4>{gardenBedDetails.height}ft X {gardenBedDetails.width}ft</h4>
       {gardenBedDetails.seeds.length > 0 && 
         gardenBedDetails.seeds.map((seed: Seed) =>(
           <Link to={`/seeds/${seed.id}`} key={seed.id}>

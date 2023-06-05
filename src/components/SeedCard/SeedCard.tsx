@@ -16,7 +16,7 @@ const SeedCard = (props: SeedCardProps): JSX.Element => {
   return (
     <article>
       <h1>{seed.name}</h1>
-      <h2>{seed.spacingHeight} X {seed.spacingWidth}</h2>
+      <h4>{seed.spacingHeight}in X {seed.spacingWidth}in</h4>
     </article>
   )
 }

@@ -16,7 +16,7 @@ const GardenBedCard = (props: GardenBedCardProps): JSX.Element => {
   return (
     <article>
       <h1>{gardenBed.name}</h1>
-      <h2>{gardenBed.height} X {gardenBed.width}</h2>
+      <h4>{gardenBed.height}ft X {gardenBed.width}ft</h4>
     </article>
   )
 }

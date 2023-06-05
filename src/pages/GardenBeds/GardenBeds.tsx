@@ -32,6 +32,7 @@ const GardenBeds = (): JSX.Element => {
   return ( 
     <main className={styles.container}>
       <h1>Hello. This is a list of all the gardenBeds.</h1>
+      <Link to="/gardenBeds/new">Create a new Garden Bed</Link>
       {gardenBeds.map((gardenBed: GardenBed) => (
         <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>
           <GardenBedCard

@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import GardenBeds from './pages/GardenBeds/GardenBeds'
 import Seeds from './pages/Seeds/Seeds'
 import GardenBedDetails from './pages/GardenBedDetails/GardenBedDetails'
+import NewGardenBed from './pages/NewGardenBed/NewGardenBed'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -26,6 +27,7 @@ import './App.css'
 import { User } from './types/models'
 import SeedDetails from './pages/SeedDetails/SeedDetails'
 
+
 function App(): JSX.Element {
   const [user, setUser] = useState<User | null>(authService.getUser())
   const navigate = useNavigate()
@@ -39,6 +41,8 @@ function App(): JSX.Element {
   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
   }
+
+  
 
   return (
     <>
@@ -81,6 +85,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <GardenBeds />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/gardenBeds/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewGardenBed profileId={user?.profile.id}/>
             </ProtectedRoute>
           }
         />

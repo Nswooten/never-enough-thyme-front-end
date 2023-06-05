@@ -3,6 +3,7 @@ import * as tokenService from './tokenService'
 
 // types
 import { Profile, GardenBed, Seed } from '../types/models'
+import { GardenBedFormData } from '../types/forms'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/gardenBeds`
 
@@ -20,7 +21,19 @@ async function show(gardenBedId: string): Promise<GardenBed> {
   return await res.json() as GardenBed
 }
 
+async function create(formData: GardenBedFormData): Promise<GardenBed> {
+  const res = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData)
+  })
+  return await res.json() as GardenBed
+}
 
 
 
-export { index, show }
+
+export { index, show, create }

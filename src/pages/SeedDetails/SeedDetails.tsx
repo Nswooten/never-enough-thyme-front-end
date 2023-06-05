@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useEffect, } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+// import { Link, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
 // services
@@ -13,8 +13,8 @@ import * as seedService from '../../services/seedService'
 // import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
 
 // types
-import { GardenBed, Seed } from '../../types/models'
-import SeedCard from '../../components/SeedCard/SeedCard'
+import {  Seed } from '../../types/models'
+// import SeedCard from '../../components/SeedCard/SeedCard'
 
 const SeedDetails = (): JSX.Element => {
   const [seedDetails, setSeedDetails] = useState<Seed>()

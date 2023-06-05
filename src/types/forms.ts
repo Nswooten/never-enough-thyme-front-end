@@ -1,12 +1,9 @@
 /* ---------==== custom forms ====--------- */
 
-export interface GardenBed {
+export interface GardenBedFormData {
   name: string;
   height: number;
   width: number;
-  profileId: number;
-  createdAt: string;
-  updatedAt: string;
 }
 
 
