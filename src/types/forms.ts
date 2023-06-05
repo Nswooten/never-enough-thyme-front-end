@@ -1,5 +1,14 @@
 /* ---------==== custom forms ====--------- */
 
+export interface GardenBed {
+  name: string;
+  height: number;
+  width: number;
+  profileId: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 
 
 /* ---------===== auth forms =====--------- */

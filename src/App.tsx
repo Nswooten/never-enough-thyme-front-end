@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import GardenBeds from './pages/GardenBeds/GardenBeds'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -50,6 +51,13 @@ function App(): JSX.Element {
           }
         />
         <Route
+          path="/profiles/:profileId"
+          element={
+            <ProtectedRoute user={user}>
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
         />
@@ -65,8 +73,45 @@ function App(): JSX.Element {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/gardenBeds"
+          element={
+            <ProtectedRoute user={user}>
+              <GardenBeds />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/gardenBeds/:gardenBedId"
+          element={
+            <ProtectedRoute user={user}>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/seeds"
+          element={
+            <ProtectedRoute user={user}>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/seeds/:seedId"
+          element={
+            <ProtectedRoute user={user}>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/gardenBeds/:gardenBedId/seeds/:seedId"
+          element={
+            <ProtectedRoute user={user}>
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
+    
   )
 }
 

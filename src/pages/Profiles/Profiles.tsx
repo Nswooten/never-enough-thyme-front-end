@@ -7,6 +7,7 @@ import * as profileService from '../../services/profileService'
 // css
 import styles from './Profiles.module.css'
 
+
 // types
 import { Profile } from '../../types/models'
 
