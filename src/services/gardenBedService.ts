@@ -13,7 +13,14 @@ async function index(): Promise<GardenBed[]> {
   return await res.json() as GardenBed[]
 }
 
+async function show(gardenBedId: string): Promise<GardenBed> {
+  const res = await fetch(`${BASE_URL}/${gardenBedId}`, {
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+  })
+  return await res.json() as GardenBed
+}
 
 
 
-export { index }
+
+export { index, show }

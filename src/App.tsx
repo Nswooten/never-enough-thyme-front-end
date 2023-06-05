@@ -9,6 +9,8 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import GardenBeds from './pages/GardenBeds/GardenBeds'
+import Seeds from './pages/Seeds/Seeds'
+import GardenBedDetails from './pages/GardenBedDetails/GardenBedDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -22,6 +24,7 @@ import './App.css'
 
 // types
 import { User } from './types/models'
+import SeedDetails from './pages/SeedDetails/SeedDetails'
 
 function App(): JSX.Element {
   const [user, setUser] = useState<User | null>(authService.getUser())
@@ -85,6 +88,7 @@ function App(): JSX.Element {
           path="/gardenBeds/:gardenBedId"
           element={
             <ProtectedRoute user={user}>
+              <GardenBedDetails />
             </ProtectedRoute>
           }
         />
@@ -92,6 +96,7 @@ function App(): JSX.Element {
           path="/seeds"
           element={
             <ProtectedRoute user={user}>
+              <Seeds />
             </ProtectedRoute>
           }
         />
@@ -99,6 +104,7 @@ function App(): JSX.Element {
           path="/seeds/:seedId"
           element={
             <ProtectedRoute user={user}>
+              <SeedDetails />
             </ProtectedRoute>
           }
         />
