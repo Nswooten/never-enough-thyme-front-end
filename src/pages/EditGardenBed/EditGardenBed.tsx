@@ -1,6 +1,6 @@
 // npm modules
 import { useState} from "react"
-import { useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from 'react-router-dom'
 
 // services
 import * as gardenBedService from '../../services/gardenBedService'
@@ -11,28 +11,31 @@ import * as gardenBedService from '../../services/gardenBedService'
 import { GardenBed, User } from "../../types/models"
 import { GardenBedFormData } from "../../types/forms"
 
-const NewGardenBed = () => {
-  const navigate = useNavigate()
-  
-  const [formData, setFormData] = useState<GardenBedFormData>({
-    name: '',
-    height: 0,
-    width: 0
-  })
+interface EditGardenProps {
+  user?: User | null;
+  profileId?: number;
+}
+
+const EditGardenBed = () => {
+  const location = useLocation()
+  const [formData, setFormData] = useState(location.state)
+  const navigate  = useNavigate()
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+
+  const handleAddGardenBed = async (formData: GardenBedFormData) => {
+    await gardenBedService.update(formData)
+    navigate(`/gardenBeds/${formData.id}`)
   }
 
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     handleAddGardenBed(formData)
   }
-
-  const handleAddGardenBed = async (formData: GardenBedFormData) => {
-    await gardenBedService.create(formData)
-    navigate('/gardenBeds')
-  }
+  console.log(formData);
+  
 
   return (
     <main>
@@ -73,4 +76,4 @@ const NewGardenBed = () => {
   )
 }
 
-export default NewGardenBed
+export default EditGardenBed

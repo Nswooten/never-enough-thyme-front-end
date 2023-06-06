@@ -33,7 +33,27 @@ async function create(formData: GardenBedFormData): Promise<GardenBed> {
   return await res.json() as GardenBed
 }
 
+async function deleteGardenBed(gardenBedId:string): Promise<GardenBed> {
+  const res = await fetch(`${BASE_URL}/${gardenBedId}`, {
+    method: 'DELETE',
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+    },
+  })
+  return await res.json() as GardenBed
+}
+
+async function update(formData: GardenBedFormData): Promise<GardenBed> {
+  const res = await fetch(`${BASE_URL}/${formData.id}`, {
+    method: 'PUT',
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData)
+  })
+  return await res.json() as GardenBed
+}
 
 
-
-export { index, show, create }
+export { index, show, create, deleteGardenBed, update }

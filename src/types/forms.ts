@@ -4,6 +4,7 @@ export interface GardenBedFormData {
   name: string;
   height: number;
   width: number;
+  id?: number;
 }
 
 

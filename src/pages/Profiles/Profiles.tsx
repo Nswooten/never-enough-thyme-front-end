@@ -1,5 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 // services
 import * as profileService from '../../services/profileService'
@@ -10,6 +11,9 @@ import styles from './Profiles.module.css'
 
 // types
 import { Profile } from '../../types/models'
+
+// components
+import ProfileDetails from '../ProfileDetails/ProfileDetails'
 
 const Profiles = (): JSX.Element => {
   const [profiles, setProfiles] = useState<Profile[]>([])
@@ -34,7 +38,11 @@ const Profiles = (): JSX.Element => {
     <main className={styles.container}>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map((profile: Profile) => (
-        <p key={profile.id}>{profile.name}</p>
+        <Link to={`/profiles/${profile.id}`} key={profile.id}>
+        <div>
+          {profile.name}
+        </div>
+      </Link>
       ))}
     </main>
   )

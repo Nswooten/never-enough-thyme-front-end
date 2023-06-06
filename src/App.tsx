@@ -12,6 +12,8 @@ import GardenBeds from './pages/GardenBeds/GardenBeds'
 import Seeds from './pages/Seeds/Seeds'
 import GardenBedDetails from './pages/GardenBedDetails/GardenBedDetails'
 import NewGardenBed from './pages/NewGardenBed/NewGardenBed'
+import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import EditGardenBed from './pages/EditGardenBed/EditGardenBed'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -19,7 +21,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-
+import * as gardenBedService from './services/gardenBedService'
 // styles
 import './App.css'
 
@@ -42,6 +44,10 @@ function App(): JSX.Element {
     setUser(authService.getUser())
   }
 
+  const handleDeleteGardenBed = async (gardenBedId: string) => {
+    await gardenBedService.deleteGardenBed(gardenBedId)
+    navigate('/gardenBeds')
+  }
   
 
   return (
@@ -61,6 +67,7 @@ function App(): JSX.Element {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
+              <ProfileDetails />
             </ProtectedRoute>
           }
         />
@@ -92,7 +99,7 @@ function App(): JSX.Element {
           path="/gardenBeds/new"
           element={
             <ProtectedRoute user={user}>
-              <NewGardenBed profileId={user?.profile.id}/>
+              <NewGardenBed />
             </ProtectedRoute>
           }
         />
@@ -100,7 +107,15 @@ function App(): JSX.Element {
           path="/gardenBeds/:gardenBedId"
           element={
             <ProtectedRoute user={user}>
-              <GardenBedDetails />
+              <GardenBedDetails profileId={user?.profile.id} handleDeleteGardenBed={handleDeleteGardenBed}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/gardenBeds/:gardenBedId/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditGardenBed />
             </ProtectedRoute>
           }
         />

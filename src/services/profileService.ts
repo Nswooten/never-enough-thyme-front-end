@@ -34,4 +34,11 @@ async function addPhoto(photoData: PhotoFormData): Promise<string> {
   return await res.json() as string
 }
 
-export { getAllProfiles, addPhoto }
+async function show(profileId: string): Promise<Profile> {
+  const res = await fetch(`${BASE_URL}/${profileId}`, {
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+  })
+  return await res.json() as Profile
+}
+
+export { getAllProfiles, addPhoto, show }
