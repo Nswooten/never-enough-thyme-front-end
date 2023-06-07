@@ -33,9 +33,7 @@ const EditGardenBed = () => {
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     handleAddGardenBed(formData)
-  }
-  console.log(formData);
-  
+  }  
 
   return (
     <main>

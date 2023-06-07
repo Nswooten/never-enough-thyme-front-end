@@ -37,6 +37,18 @@ const SeedDetails = (): JSX.Element => {
   return ( 
     <main >
       <h1>{seedDetails.name}</h1>
+      <h4>{seedDetails.instructions}</h4>
+      <span>Plant Type: {seedDetails.plantType}</span>
+      <ul>
+        <li>Days to Germinate: {seedDetails.daysToGerm}</li>
+        <li>Days to Maturity: {seedDetails.daysToMaturity}</li>
+        <li>Days to Harvest: {seedDetails.daysToHarvest}</li>
+        <li>Grows up to {seedDetails.growingHeight} inches tall</li>
+        <li>You should plant rows {seedDetails.spacingHeight}'' apart</li>
+        <li>Each individual plant should be {seedDetails.spacingWidth}'' away from the adjacent plant on each row</li>
+        <li>This plant grows best in {seedDetails.growsBestIn.toLowerCase()}</li>
+        <li>You should plant these seeds {seedDetails.plantingDepth}'' deep</li>
+      </ul>
     </main>
   )
   }else{

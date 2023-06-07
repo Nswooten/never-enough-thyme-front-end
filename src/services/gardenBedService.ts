@@ -55,5 +55,33 @@ async function update(formData: GardenBedFormData): Promise<GardenBed> {
   return await res.json() as GardenBed
 }
 
+async function associateSeed(gardenBedId:string, seedId:string) {
+  try {
+    const res = await fetch(`${BASE_URL}/${gardenBedId}/seeds/${seedId}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-export { index, show, create, deleteGardenBed, update }
+async function deleteSeedAssociation(gardenBedId:string, seedId:string) {
+  try {
+    const res = await fetch(`${BASE_URL}/${gardenBedId}/seeds/${seedId}`, {
+      method: 'Delete',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+export { index, show, create, deleteGardenBed, update, associateSeed, deleteSeedAssociation }
