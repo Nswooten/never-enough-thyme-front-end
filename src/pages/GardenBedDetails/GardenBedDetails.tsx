@@ -7,8 +7,8 @@ import { useParams } from 'react-router-dom'
 import * as gardenBedService from '../../services/gardenBedService'
 import * as seedService from '../../services/seedService'
 
-// // css
-// import styles from './GardenBeds.module.css'
+// css
+import styles from './GardenBedDetails.module.css'
 
 
 // types
@@ -78,10 +78,16 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
       }
     }
   }
+  
 
   if(gardenBedDetails){
+    // const gardenBedStyle = {
+    //   width: `${gardenBedDetails.width * 120}px`,
+    //   height: `${gardenBedDetails.height * 120}px`
+    // }
+    
     return ( 
-      <main >
+      <main className={styles.gardenbedpage}>
         <div>
           <h1>{gardenBedDetails.name}</h1>
           <h4>{gardenBedDetails.height}ft X {gardenBedDetails.width}ft</h4>
@@ -97,9 +103,17 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
               </button>
             </>
           }
+        </div>
+        <div className={styles.gardenbed}>
           {gardenBedDetails.seeds.length > 0 && 
             gardenBedDetails.seeds.map((seed: Seed, index:number) =>(
-                <div key={index}>
+                <div
+                className={styles.seedsingardenbed} 
+                style={{
+                  width: `${(800 / (gardenBedDetails.width * 12)) * seed.spacingWidth}px`,
+                  height: `${(800 / (gardenBedDetails.width * 12)) * seed.spacingHeight}px`
+                }}
+                key={index}>
                   <SeedCard 
                   seed={seed}
                   gardenBedDetails={gardenBedDetails}

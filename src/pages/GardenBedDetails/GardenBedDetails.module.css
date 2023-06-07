@@ -1,0 +1,23 @@
+.gardenbed {
+  display: flex;
+  flex: 0 0 auto;
+  border: 4px solid white;
+  height: 800px;
+  width: 800px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start
+  
+}
+
+.seedsingardenbed {
+  display: flex;
+  overflow: hidden;
+  border: 4px solid white;
+}
+
+.gardenbedpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
