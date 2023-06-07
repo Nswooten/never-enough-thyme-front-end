@@ -11,7 +11,6 @@ import SeedCard from '../../components/SeedCard/SeedCard'
 
 // types
 import {  Seed } from '../../types/models'
-import { Link } from 'react-router-dom'
 
 const Seeds = (): JSX.Element => {
   const [seeds, setSeeds] = useState<Seed[]>([])
