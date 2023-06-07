@@ -1,17 +1,15 @@
 // npm modules
 import { useState, useEffect, } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
 // services
 import * as gardenBedService from '../../services/gardenBedService'
 import * as seedService from '../../services/seedService'
 
-// css
+// // css
 // import styles from './GardenBeds.module.css'
 
-// components
-// import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
 
 // types
 import { GardenBed, Seed } from '../../types/models'
@@ -72,6 +70,8 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
     const deletedSeedInfo = await gardenBedService.deleteSeedAssociation(gardenBedId, seedId)
     if (gardenBedDetails) {
       const seedIndex = gardenBedDetails.seeds.findIndex((seed) => seed.id === deletedSeedInfo.seed.id)
+      console.log(seedIndex);
+      
       if (seedIndex !== -1) {
         gardenBedDetails.seeds.splice(seedIndex, 1)
         setGardenBedDetails({ ...gardenBedDetails })

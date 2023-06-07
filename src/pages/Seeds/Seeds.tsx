@@ -10,7 +10,7 @@ import styles from './Seeds.module.css'
 import SeedCard from '../../components/SeedCard/SeedCard'
 
 // types
-import { GardenBed, Seed } from '../../types/models'
+import {  Seed } from '../../types/models'
 import { Link } from 'react-router-dom'
 
 const Seeds = (): JSX.Element => {

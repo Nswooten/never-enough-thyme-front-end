@@ -6,15 +6,11 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import * as gardenBedService from '../../services/gardenBedService'
 
 // css
+// import styles from './EditGardenBed.module.css'
 
 // types
-import { GardenBed, User } from "../../types/models"
 import { GardenBedFormData } from "../../types/forms"
 
-interface EditGardenProps {
-  user?: User | null;
-  profileId?: number;
-}
 
 const EditGardenBed = () => {
   const location = useLocation()

@@ -12,9 +12,6 @@ import styles from './Profiles.module.css'
 // types
 import { Profile } from '../../types/models'
 
-// components
-import ProfileDetails from '../ProfileDetails/ProfileDetails'
-
 const Profiles = (): JSX.Element => {
   const [profiles, setProfiles] = useState<Profile[]>([])
 

@@ -1,9 +1,8 @@
 // npm modules
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-// assets
-
-// components
+//css
+// import Styles from './SeedCard.module.css'
 
 // types
 import { GardenBed, Seed } from "../../types/models"

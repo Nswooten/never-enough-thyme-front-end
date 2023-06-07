@@ -1,6 +1,5 @@
-// assets
-
-// components
+// css
+// import Styles from './GardenBedCard.module.css'
 
 // types
 import { GardenBed } from "../../types/models"

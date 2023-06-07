@@ -1,27 +1,17 @@
 // npm modules
 import { useState, useEffect, } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
 // services
 import * as profileService from '../../services/profileService'
 
 // css
-// import styles from './GardenBeds.module.css'
-
-// components
-// import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
+// import Styles from './ProfileDetails.module.css'
 
 // types
 import { GardenBed, Profile } from '../../types/models'
-import SeedCard from '../../components/SeedCard/SeedCard'
 import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
-
-
-interface ProfileDetailsProps {
-  gardenBed: GardenBed;
-  // handleVote: (formData: VoteManagerFormData) => Promise<void>;
-}
 
 const ProfileDetails = (): JSX.Element => {
   const [profileDetails, setProfileDetails] = useState<Profile>()

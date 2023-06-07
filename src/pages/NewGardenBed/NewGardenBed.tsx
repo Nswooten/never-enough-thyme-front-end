@@ -6,9 +6,9 @@ import { useNavigate} from "react-router-dom";
 import * as gardenBedService from '../../services/gardenBedService'
 
 // css
+// import Stlyes from './NewGardenBed.module.css'
 
 // types
-import { GardenBed, User } from "../../types/models"
 import { GardenBedFormData } from "../../types/forms"
 
 const NewGardenBed = () => {

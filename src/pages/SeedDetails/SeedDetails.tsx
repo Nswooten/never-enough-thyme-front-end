@@ -7,10 +7,7 @@ import { useParams } from 'react-router-dom'
 import * as seedService from '../../services/seedService'
 
 // css
-// import styles from './GardenBeds.module.css'
-
-// components
-// import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
+// import Styles from './SeedDetails.module.css'
 
 // types
 import {  Seed } from '../../types/models'
