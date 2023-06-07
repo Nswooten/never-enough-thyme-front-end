@@ -32,11 +32,9 @@ const Seeds = (): JSX.Element => {
     <main className={styles.container}>
       <h1>Hello. This is a list of all the Seeds.</h1>
       {seeds.map((seed: Seed) => (
-        <Link to={`/seeds/${seed.id}`} key={seed.id}>
-          <div>
-            <SeedCard seed={seed}/>
-          </div>
-        </Link>
+        <div key={seed.id}>
+          <SeedCard seed={seed}/>
+        </div>
       ))
       }
     </main>
