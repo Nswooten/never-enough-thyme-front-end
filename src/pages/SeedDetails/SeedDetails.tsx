@@ -7,10 +7,11 @@ import { useParams } from 'react-router-dom'
 import * as seedService from '../../services/seedService'
 
 // css
-// import Styles from './SeedDetails.module.css'
+import styles from './SeedDetails.module.css'
 
 // types
 import {  Seed } from '../../types/models'
+import Icon from '../../components/Icon/Icon'
 // import SeedCard from '../../components/SeedCard/SeedCard'
 
 const SeedDetails = (): JSX.Element => {
@@ -34,6 +35,9 @@ const SeedDetails = (): JSX.Element => {
   return ( 
     <main >
       <h1>{seedDetails.name}</h1>
+      <div className={styles.imagecontainer}>
+        <Icon vegetable={`image${seedDetails.id}`} />
+      </div>
       <h4>{seedDetails.instructions}</h4>
       <span>Plant Type: {seedDetails.plantType}</span>
       <ul>

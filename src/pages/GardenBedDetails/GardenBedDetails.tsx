@@ -66,26 +66,17 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
     }
   }
 
-  const handleRemoveSeedFromGardenBed = async (gardenBedId: string, seedId: string): Promise<void> => {
-    const deletedSeedInfo = await gardenBedService.deleteSeedAssociation(gardenBedId, seedId)
-    if (gardenBedDetails) {
-      const seedIndex = gardenBedDetails.seeds.findIndex((seed) => seed.id === deletedSeedInfo.seed.id)
-      console.log(seedIndex);
-      
-      if (seedIndex !== -1) {
-        gardenBedDetails.seeds.splice(seedIndex, 1)
-        setGardenBedDetails({ ...gardenBedDetails })
-      }
+  const handleRemoveSeedFromGardenBed = async (gardenBedId: string, seedId: string, seedIdx: number | undefined): Promise<void> => {
+    await gardenBedService.deleteSeedAssociation(gardenBedId, seedId)
+    if(gardenBedDetails){
+      setGardenBedDetails({...gardenBedDetails, seeds: gardenBedDetails.seeds.filter((_, idx) => {
+        return idx !== seedIdx
+      })})
     }
   }
   
 
   if(gardenBedDetails){
-    // const gardenBedStyle = {
-    //   width: `${gardenBedDetails.width * 120}px`,
-    //   height: `${gardenBedDetails.height * 120}px`
-    // }
-    
     return ( 
       <main className={styles.gardenbedpage}>
         <div>
@@ -111,11 +102,12 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
                 className={styles.seedsingardenbed} 
                 style={{
                   width: `${(800 / (gardenBedDetails.width * 12)) * seed.spacingWidth}px`,
-                  height: `${(800 / (gardenBedDetails.width * 12)) * seed.spacingHeight}px`
+                  height: `${(800 / (gardenBedDetails.height * 12)) * seed.spacingHeight}px`
                 }}
                 key={index}>
                   <SeedCard 
                   seed={seed}
+                  seedIdx={index}
                   gardenBedDetails={gardenBedDetails}
                   profileId={profileId}
                   handleRemoveSeedFromGardenBed={handleRemoveSeedFromGardenBed } 
