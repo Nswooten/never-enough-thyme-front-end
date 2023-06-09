@@ -3,7 +3,7 @@
 # [Never Enough Thyme](https://never-enough-thyme.netlify.app/)
 Meet Never Enough Thyme, your new best friend in the garden! 
 
-This React-App allows you to create your a garden bed while also specifying the dimensions. Once created, you can add seeds to your garden bed which automatically space themselves based on the manufactures recommended row/plant spacing.
+This React-App allows you to create a garden bed while also specifying the dimensions. Once created, you can add seeds to your garden bed which automatically space themselves based on the manufactures recommended row/plant spacing.
 
 ## Getting Started
 
