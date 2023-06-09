@@ -1,7 +1,6 @@
 // css
 import styles from './Landing.module.css'
 
-
 // types
 import { User } from '../../types/models'
 

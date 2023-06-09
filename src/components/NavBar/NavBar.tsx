@@ -1,8 +1,12 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+//npm modules
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+//assets
 import { faUser, faUsers, faSquare, faSeedling, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+
 // types
 import { User } from '../../types/models'
 
@@ -25,7 +29,6 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <div><NavLink to="/profiles"><FontAwesomeIcon icon={faUsers} size="2xl" style={{ color: "#ffffff", }} /></NavLink></div>
           <div><NavLink to="/gardenBeds"><FontAwesomeIcon icon={faSquare} size="2xl" style={{ color: "#ffffff", }} /></NavLink></div>
           <div><NavLink to="/seeds"><FontAwesomeIcon icon={faSeedling} size="2xl" style={{ color: "#ffffff", }} /></NavLink></div>
-
           <div><NavLink to="" onClick={handleLogout}><FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{ color: "#ffffff", }} /></NavLink></div>
         </div>
         :

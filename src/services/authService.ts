@@ -3,7 +3,7 @@ import * as tokenService from './tokenService'
 import { addPhoto as addProfilePhoto } from './profileService'
 
 // types
-import { 
+import {
   ChangePasswordFormData,
   LoginFormData,
   SignupFormData,
@@ -14,7 +14,7 @@ import { User } from '../types/models'
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/auth`
 
 async function signup(
-  signupFormData: SignupFormData, 
+  signupFormData: SignupFormData,
   photoData: PhotoFormData,
 ): Promise<void> {
   const res = await fetch(`${BASE_URL}/signup`, {
@@ -25,7 +25,7 @@ async function signup(
   const json = await res.json()
 
   if (json.err) throw new Error(json.err)
-  
+
   if (json.token) {
     tokenService.setToken(json.token)
 

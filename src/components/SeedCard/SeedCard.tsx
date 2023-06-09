@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
-
 //components
 import Icon from '../../components/Icon/Icon'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 //css
 import styles from './SeedCard.module.css'
 
@@ -22,12 +21,14 @@ interface SeedCardProps {
   handleAddSeedToGardenBed?: (gardenBedId: string, seedId: string) => Promise<void>;
   handleRemoveSeedFromGardenBed?: (gardenBedId: string, seedId: string, seedIdx: number | undefined) => Promise<void>;
 }
+
 const SeedCard = (props: SeedCardProps): JSX.Element => {
   const [isHovered, setIsHovered] = useState(false)
   const { seed, gardenBedDetails, handleAddSeedToGardenBed, handleRemoveSeedFromGardenBed, profileId, seedIdx } = props
   const handleMouseEnter = () => {
     setIsHovered(true)
   }
+
   const handleMouseLeave = () => {
     setIsHovered(false);
   }

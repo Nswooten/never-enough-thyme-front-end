@@ -9,13 +9,16 @@ import * as profileService from '../../services/profileService'
 // css
 import styles from './ProfileDetails.module.css'
 
+//components
+import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
+
 // types
 import { GardenBed, Profile } from '../../types/models'
-import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
 
 const ProfileDetails = (): JSX.Element => {
   const [profileDetails, setProfileDetails] = useState<Profile>()
   const { profileId } = useParams()
+
   useEffect((): void => {
     const fetchProfileDetails = async (): Promise<void> => {
       try {

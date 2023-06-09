@@ -1,8 +1,3 @@
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
-
-
-
-
 // assets
 import plant from '../../assets/icons/plant.svg'
 import image1 from '../../assets/icons/image1.svg'

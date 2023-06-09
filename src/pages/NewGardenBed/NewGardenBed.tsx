@@ -12,13 +12,13 @@ import styles from './NewGardenBed.module.css'
 import { GardenBedFormData } from "../../types/forms"
 
 const NewGardenBed = () => {
-  const navigate = useNavigate()
-
   const [formData, setFormData] = useState<GardenBedFormData>({
     name: '',
     height: 0,
     width: 0
   })
+  
+  const navigate = useNavigate()
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })

@@ -20,5 +20,4 @@ async function show(seedId: string): Promise<Seed> {
   return await res.json() as Seed
 }
 
-
 export { index, show }

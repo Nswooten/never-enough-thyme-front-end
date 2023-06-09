@@ -27,9 +27,9 @@ const GardenBeds = (): JSX.Element => {
     }
     fetchGardenBeds()
   }, [])
-  
 
-  return ( 
+
+  return (
     <main className={styles.gardenbedscontainer}>
       <h1>This is a list of all the gardenBeds.</h1>
       <Link className={styles.createagardenbed} to="/gardenBeds/new">Create a new Garden Bed</Link>
@@ -37,8 +37,8 @@ const GardenBeds = (): JSX.Element => {
         <div className={styles.gardenbedcontainer}>
           <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>
             <GardenBedCard
-            key={gardenBed.id}
-            gardenBed={gardenBed}
+              key={gardenBed.id}
+              gardenBed={gardenBed}
             />
           </Link>
         </div>
@@ -46,5 +46,5 @@ const GardenBeds = (): JSX.Element => {
     </main>
   )
 }
- 
+
 export default GardenBeds
