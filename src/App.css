@@ -12,23 +12,33 @@ body {
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #000000;
+  background-color: #050505;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  background-image: url("../src/assets/soil3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
 }
+
+h1 {
+  color: rgb(32, 171, 32)
+}
+
 
 a,
 a:visited {
-  color: #00d8ff
+  color: #1b3b41
 }
 
-nav > ul {
-  margin: 0;
-  padding: 16px 32px;
-}
 

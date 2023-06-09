@@ -33,7 +33,7 @@ import SeedDetails from './pages/SeedDetails/SeedDetails'
 function App(): JSX.Element {
   const [user, setUser] = useState<User | null>(authService.getUser())
   const navigate = useNavigate()
-  
+
   const handleLogout = (): void => {
     authService.logout()
     setUser(null)
@@ -48,7 +48,7 @@ function App(): JSX.Element {
     await gardenBedService.deleteGardenBed(gardenBedId)
     navigate('/gardenBeds')
   }
-  
+
 
   return (
     <>
@@ -107,7 +107,7 @@ function App(): JSX.Element {
           path="/gardenBeds/:gardenBedId"
           element={
             <ProtectedRoute user={user}>
-              <GardenBedDetails profileId={user?.profile.id} handleDeleteGardenBed={handleDeleteGardenBed}/>
+              <GardenBedDetails profileId={user?.profile.id} handleDeleteGardenBed={handleDeleteGardenBed} />
             </ProtectedRoute>
           }
         />
@@ -144,7 +144,7 @@ function App(): JSX.Element {
         />
       </Routes>
     </>
-    
+
   )
 }
 

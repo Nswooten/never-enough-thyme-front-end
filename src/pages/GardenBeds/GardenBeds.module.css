@@ -1,0 +1,24 @@
+.gardenbedscontainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gardenbedcontainer {
+border: solid 1px black;
+height: 150px;
+width: 150px;
+margin-top: 20px;
+background-color: rgba(0, 0, 0, 0.547);
+}
+
+.createagardenbed {
+  padding-left: 8px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  color: green;
+  height: 50px;
+  width: 200px;
+  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.588)
+}

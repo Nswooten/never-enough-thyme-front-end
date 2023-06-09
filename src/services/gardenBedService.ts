@@ -2,7 +2,7 @@
 import * as tokenService from './tokenService'
 
 // types
-import {  GardenBed } from '../types/models'
+import { GardenBed } from '../types/models'
 import { GardenBedFormData } from '../types/forms'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/gardenBeds`
@@ -24,7 +24,7 @@ async function show(gardenBedId: string): Promise<GardenBed> {
 async function create(formData: GardenBedFormData): Promise<GardenBed> {
   const res = await fetch(BASE_URL, {
     method: 'POST',
-    headers: { 
+    headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json',
     },
@@ -33,10 +33,10 @@ async function create(formData: GardenBedFormData): Promise<GardenBed> {
   return await res.json() as GardenBed
 }
 
-async function deleteGardenBed(gardenBedId:string): Promise<GardenBed> {
+async function deleteGardenBed(gardenBedId: string): Promise<GardenBed> {
   const res = await fetch(`${BASE_URL}/${gardenBedId}`, {
     method: 'DELETE',
-    headers: { 
+    headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
     },
   })
@@ -46,7 +46,7 @@ async function deleteGardenBed(gardenBedId:string): Promise<GardenBed> {
 async function update(formData: GardenBedFormData): Promise<GardenBed> {
   const res = await fetch(`${BASE_URL}/${formData.id}`, {
     method: 'PUT',
-    headers: { 
+    headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json',
     },
@@ -55,7 +55,7 @@ async function update(formData: GardenBedFormData): Promise<GardenBed> {
   return await res.json() as GardenBed
 }
 
-async function associateSeed(gardenBedId:string, seedId:string) {
+async function associateSeed(gardenBedId: string, seedId: string) {
   try {
     const res = await fetch(`${BASE_URL}/${gardenBedId}/seeds/${seedId}`, {
       method: 'POST',
@@ -69,7 +69,7 @@ async function associateSeed(gardenBedId:string, seedId:string) {
   }
 }
 
-async function deleteSeedAssociation(gardenBedId:string, seedId:string) {
+async function deleteSeedAssociation(gardenBedId: string, seedId: string) {
   try {
     const res = await fetch(`${BASE_URL}/${gardenBedId}/seeds/${seedId}`, {
       method: 'Delete',

@@ -1,0 +1,14 @@
+.seedscontainer {
+  display: flex;
+  justify-content: center;  /* flex-direction: column;
+  align-items: center; */
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.seedscontainer > div {
+  width: 400px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.435);
+}
+

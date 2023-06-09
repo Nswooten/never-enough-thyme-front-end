@@ -1,3 +1,8 @@
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
+
+
+
 // assets
 import plant from '../../assets/icons/plant.svg'
 import image1 from '../../assets/icons/image1.svg'
@@ -32,7 +37,8 @@ const Icon = ({ vegetable }:IconProps) => {
 
   }
   return (
-    <img className="icon" src={icons[vegetable as keyof typeof icons]} alt={`A ${vegetable} icon.`} />
+      <img className="icon" src={icons[vegetable as keyof typeof icons]} alt={`A ${vegetable} icon.`} />
+
   )
 }
 

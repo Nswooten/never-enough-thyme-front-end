@@ -33,16 +33,16 @@ const Profiles = (): JSX.Element => {
 
   return (
     <main className={styles.container}>
-      <h1>Hello. This is a list of all the profiles.</h1>
+      <h1>Profile List</h1>
       {profiles.map((profile: Profile) => (
-        <Link to={`/profiles/${profile.id}`} key={profile.id}>
-        <div>
-          {profile.name}
+        <div className={styles.profilenamecontainer} key={profile.id}>
+          <Link to={`/profiles/${profile.id}`} >
+            <h1>{profile.name}</h1>
+          </Link>
         </div>
-      </Link>
       ))}
     </main>
   )
 }
- 
+
 export default Profiles

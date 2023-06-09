@@ -1,12 +1,12 @@
 // npm modules
-import { useState} from "react"
+import { useState } from "react"
 import { useLocation, useNavigate } from 'react-router-dom'
 
 // services
 import * as gardenBedService from '../../services/gardenBedService'
 
 // css
-// import styles from './EditGardenBed.module.css'
+import styles from './EditGardenBed.module.css'
 
 // types
 import { GardenBedFormData } from "../../types/forms"
@@ -15,7 +15,7 @@ import { GardenBedFormData } from "../../types/forms"
 const EditGardenBed = () => {
   const location = useLocation()
   const [formData, setFormData] = useState(location.state)
-  const navigate  = useNavigate()
+  const navigate = useNavigate()
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -29,11 +29,12 @@ const EditGardenBed = () => {
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     handleAddGardenBed(formData)
-  }  
+  }
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
+    <main className={styles.editgardenbedcontainer}>
+      <h1 className={styles.editgardenbedh1}>Edit your Garden Bed</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor="name-input">Title</label>
         <input
           required
@@ -45,7 +46,7 @@ const EditGardenBed = () => {
           onChange={handleChange}
         />
         <label htmlFor="height-input">Height(ft)</label>
-				<input
+        <input
           required
           type="number"
           name="height"
@@ -55,15 +56,15 @@ const EditGardenBed = () => {
           onChange={handleChange}
         />
         <label htmlFor="width-input">Width(ft)</label>
-          <input
-            required
-            type="number"
-            name="width"
-            id="width-input"
-            value={formData.width}
-            placeholder="Width(ft)"
-            onChange={handleChange}
-          />
+        <input
+          required
+          type="number"
+          name="width"
+          id="width-input"
+          value={formData.width}
+          placeholder="Width(ft)"
+          onChange={handleChange}
+        />
         <button type="submit">SUBMIT</button>
       </form>
     </main>

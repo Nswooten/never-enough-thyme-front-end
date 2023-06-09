@@ -30,16 +30,18 @@ const GardenBeds = (): JSX.Element => {
   
 
   return ( 
-    <main className={styles.container}>
-      <h1>Hello. This is a list of all the gardenBeds.</h1>
-      <Link to="/gardenBeds/new">Create a new Garden Bed</Link>
+    <main className={styles.gardenbedscontainer}>
+      <h1>This is a list of all the gardenBeds.</h1>
+      <Link className={styles.createagardenbed} to="/gardenBeds/new">Create a new Garden Bed</Link>
       {gardenBeds.map((gardenBed: GardenBed) => (
-        <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>
-          <GardenBedCard
-          key={gardenBed.id}
-          gardenBed={gardenBed}
-          />
-        </Link>
+        <div className={styles.gardenbedcontainer}>
+          <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>
+            <GardenBedCard
+            key={gardenBed.id}
+            gardenBed={gardenBed}
+            />
+          </Link>
+        </div>
       ))}
     </main>
   )

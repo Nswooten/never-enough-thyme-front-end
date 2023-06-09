@@ -1,19 +1,19 @@
 // npm modules
-import { useState} from "react"
-import { useNavigate} from "react-router-dom";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 // services
 import * as gardenBedService from '../../services/gardenBedService'
 
 // css
-// import Stlyes from './NewGardenBed.module.css'
+import styles from './NewGardenBed.module.css'
 
 // types
 import { GardenBedFormData } from "../../types/forms"
 
 const NewGardenBed = () => {
   const navigate = useNavigate()
-  
+
   const [formData, setFormData] = useState<GardenBedFormData>({
     name: '',
     height: 0,
@@ -35,8 +35,9 @@ const NewGardenBed = () => {
   }
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
+    <main className={styles.newgardenbedcontainer}>
+      <h1 className={styles.newgardenbedh1}>Create a new Garden Bed</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor="name-input">Title</label>
         <input
           required
@@ -48,7 +49,7 @@ const NewGardenBed = () => {
           onChange={handleChange}
         />
         <label htmlFor="height-input">Height(ft)</label>
-				<input
+        <input
           required
           type="number"
           name="height"
@@ -58,15 +59,15 @@ const NewGardenBed = () => {
           onChange={handleChange}
         />
         <label htmlFor="width-input">Width(ft)</label>
-          <input
-            required
-            type="number"
-            name="width"
-            id="width-input"
-            value={formData.width}
-            placeholder="Width(ft)"
-            onChange={handleChange}
-          />
+        <input
+          required
+          type="number"
+          name="width"
+          id="width-input"
+          value={formData.width}
+          placeholder="Width(ft)"
+          onChange={handleChange}
+        />
         <button type="submit">SUBMIT</button>
       </form>
     </main>

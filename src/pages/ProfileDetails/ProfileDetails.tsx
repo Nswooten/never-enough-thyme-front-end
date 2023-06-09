@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 import * as profileService from '../../services/profileService'
 
 // css
-// import Styles from './ProfileDetails.module.css'
+import styles from './ProfileDetails.module.css'
 
 // types
 import { GardenBed, Profile } from '../../types/models'
@@ -19,39 +19,41 @@ const ProfileDetails = (): JSX.Element => {
   useEffect((): void => {
     const fetchProfileDetails = async (): Promise<void> => {
       try {
-      if(profileId){
-        const profileData: Profile = await profileService.show(profileId)
-        setProfileDetails(profileData)
-      }
+        if (profileId) {
+          const profileData: Profile = await profileService.show(profileId)
+          setProfileDetails(profileData)
+        }
       } catch (error) {
         console.log(error)
       }
     }
     fetchProfileDetails()
   }, [profileId])
-  
-  if(profileDetails){
-  return ( 
-    <main >
-      <h1>{profileDetails.name}'s' Profile</h1>
-      {profileDetails.gardenBeds.length > 0 && 
-        profileDetails.gardenBeds.map((gardenBed: GardenBed) =>(
-          <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>
-            <div>
-              <GardenBedCard gardenBed={gardenBed}/>
-            </div>
-          </Link>
-        ))
-      }
-    </main>
-  )
-  }else{
+
+  if (profileDetails) {
+    return (
+      <main className={styles.profiledetailscontainer}>
+        <h1>{profileDetails.name}'s' Profile</h1>
+        <div className={styles.changepassword}><Link to="/auth/change-password">Change Password</Link></div>
+        <div className={styles.createagardenbed}><Link to="/gardenBeds/new">Create a new Garden Bed</Link></div>
+        {profileDetails.gardenBeds.length > 0 &&
+          profileDetails.gardenBeds.map((gardenBed: GardenBed) => (
+            <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>
+              <div className={styles.garbencontainer}>
+                <GardenBedCard gardenBed={gardenBed} />
+              </div>
+            </Link>
+          ))
+        }
+      </main>
+    )
+  } else {
     return (
       <main >
-      <h1>Hello. This should be a profile.</h1>
+        <h1>Hello. This should be a profile.</h1>
       </main>
     )
   }
 }
- 
+
 export default ProfileDetails
