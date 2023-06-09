@@ -1,9 +1,9 @@
-![Never Enough Thyme](/src/assets/icons/bite-buddy-readme-logo.png)
+![Never Enough Thyme](/src/assets/Screenshot%202023-06-08%20at%2010.24.39%20PM.png)
 
-# [Never Enough Thyme](https://bitebuddyapp.netlify.app/)
+# [Never Enough Thyme](https://never-enough-thyme.netlify.app/)
 Meet Never Enough Thyme, your new best friend in the garden! 
 
-This React-App allows you to create your own garden bed while also specifying the dimensions. Once created, you can add seeds to your garden bed which automatically space themselves based on the manufactures recommened row/plant spacing.
+This React-App allows you to create your a garden bed while also specifying the dimensions. Once created, you can add seeds to your garden bed which automatically space themselves based on the manufactures recommended row/plant spacing.
 
 ## Getting Started
 
@@ -13,9 +13,9 @@ This React-App allows you to create your own garden bed while also specifying th
 ⬅️  [Backend](https://github.com/Nswooten/never-enough-thyme-back-end) repository link
 
 ## Credits and acknowledgments
-* [Font Awesome for icons](fontawesome.com)
+* [Font Awesome for icons](https://fontawesome.com/)
 * [Ferry Morse for seed data](https://ferrymorse.com/collections/all-ferry-morse-seeds)
-* [Adobe Express for svg conversion](https://express.adobe.com/tools/convert-to-svg)
+* [Adobe Express for .svg conversion](https://express.adobe.com/tools/convert-to-svg)
 
 
 ## Technologies used 
