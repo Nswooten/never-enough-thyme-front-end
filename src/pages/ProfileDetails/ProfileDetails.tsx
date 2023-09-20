@@ -44,12 +44,16 @@ const ProfileDetails = (props: ProfileDetailsProps): JSX.Element => {
         <h1>{profileDetails.name}'s' Profile</h1>
         {user?.profile.id === parseInt(profileId || "") && (
           <div>
-            <div className={styles.changepassword}>
-              <Link to="/auth/change-password">Change Password</Link>
-            </div>
-            <div className={styles.createagardenbed}>
-              <Link to="/gardenBeds/new">Create a new Garden Bed</Link>
-            </div>
+            <Link to="/auth/change-password">
+              <div className={styles.changepassword}>
+                Change Password
+              </div>
+            </Link>
+            <Link to="/gardenBeds/new">
+              <div className={styles.createagardenbed}>
+                Create a new Garden Bed
+              </div>
+            </Link>
           </div>
         )}
         {profileDetails.gardenBeds.length > 0 &&

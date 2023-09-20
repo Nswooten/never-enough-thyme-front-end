@@ -32,7 +32,7 @@ const GardenBeds = (): JSX.Element => {
   return (
     <main className={styles.gardenbedscontainer}>
       <h1>GardenBeds</h1>
-      <Link className={styles.createagardenbed} to="/gardenBeds/new">Create a new Garden Bed</Link>
+      <Link  to="/gardenBeds/new"><div className={styles.createagardenbed}>Create a new Garden Bed</div></Link>
       <div className={styles.gardenBedListContainer}>
         {gardenBeds.map((gardenBed: GardenBed) => (
           <div className={styles.gardenbedcontainer}>
