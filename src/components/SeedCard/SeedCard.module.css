@@ -32,3 +32,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.seedCardH1 {
+font-size: 1.5rem;
+}
+.seedCardH4 {
+font-size: 1rem;
+}

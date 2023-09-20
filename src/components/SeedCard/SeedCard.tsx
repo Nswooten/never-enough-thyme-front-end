@@ -77,8 +77,8 @@ const SeedCard = (props: SeedCardProps): JSX.Element => {
         <Link to={`/seeds/${seed.id}`}>
           <Icon vegetable={`image${seed.id}`} />
         </Link>
-        <h1>{seed.name}</h1>
-        <h4>{seed.spacingHeight}in X {seed.spacingWidth}in</h4>
+        <h1 className={styles.seedCardH1}>{seed.name}</h1>
+        <h4 className={styles.seedCardH4}>{seed.spacingHeight}in X {seed.spacingWidth}in</h4>
       </main>
     )
   }
