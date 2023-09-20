@@ -1,8 +1,9 @@
 .naviconscontainer {
   display: flex;
   justify-content: space-around;
-  height: 150px;
+  height: 100px;
   align-items: center;
   background-color: rgba(1, 1, 1, 0.619);
-  border-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
