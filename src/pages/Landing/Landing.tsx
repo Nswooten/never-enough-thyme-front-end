@@ -17,15 +17,15 @@ interface LandingProps {
 const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
   return (
-    <main className={styles.container} >
+    <main className={styles.landingContainer} >
       <h1>Never Enough Thyme</h1>
       <div className={styles.svgContainer}>
-        <img className={styles.svg} src={gardening} alt={`A gardening icon.`} />
+        <img src={gardening} alt={`A gardening icon.`} />
       </div>
       {!user ? 
       <div className={styles.buttonContainer}>
-        <NavLink to="/auth/login" className={styles.navLink}><button>Log In</button></NavLink>
-        <NavLink to="/auth/signup" className={styles.navLink}><button>Sign Up</button></NavLink>
+        <NavLink to="/auth/login" className={styles.navLink}><button className={styles.landingButtons}>Log In</button></NavLink>
+        <NavLink to="/auth/signup" className={styles.navLink}><button className={styles.landingButtons}>Sign Up</button></NavLink>
       </div>
       : 
       null
