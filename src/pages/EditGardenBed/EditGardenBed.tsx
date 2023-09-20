@@ -65,7 +65,7 @@ const EditGardenBed = () => {
           placeholder="Width(ft)"
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <button className={styles.submitButton} type="submit">SUBMIT</button>
       </form>
     </main>
   )

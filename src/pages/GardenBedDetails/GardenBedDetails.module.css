@@ -36,8 +36,8 @@
 }
 
 .seedlistcontainer {
-  width: 392.5px;
-  height: 800px;
+  width: 500px;
+  height: 900px;
   overflow: auto;
 }
 
@@ -54,4 +54,43 @@
 
 .gardenbedh4 {
   text-align: center;
+}
+
+.deleteButton {
+  margin: 10px 40px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6CC551;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.deleteButton:hover {
+  background-color: #315C2B;
+}
+
+
+.editButton {
+  margin: 10px 40px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6CC551;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.editButton:hover {
+  background-color: #315C2B;
+}
+
+.addSeedCard {
+  border: solid 1px #315C2B;
+  background-color: #315c2b75;
+  margin-top: 20px;
 }

@@ -88,11 +88,11 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
             {profileId === gardenBedDetails.profileId && gardenBedId &&
               <>
                 <Link to={`/gardenBeds/${gardenBedId}/edit`} state={gardenBedDetails}>
-                  <button>
+                  <button className={styles.editButton} >
                     Edit
                   </button>
                 </Link>
-                <button onClick={() => handleDeleteGardenBed(gardenBedId)}>
+                <button className={styles.deleteButton} onClick={() => handleDeleteGardenBed(gardenBedId)}>
                   Delete
                 </button>
               </>
@@ -123,10 +123,10 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
         {profileId === gardenBedDetails.profileId &&
           <>
             <div>
-              <h1>This is a list of all the Seeds.</h1>
+              <h1>Seeds</h1>
               <div className={styles.seedlistcontainer}>
                 {seeds.map((seed: Seed) => (
-                  <div key={seed.id}>
+                  <div className={styles.addSeedCard} key={seed.id}>
                     <SeedCard
                       seed={seed}
                       profileId={profileId}
@@ -188,7 +188,7 @@ const GardenBedDetails = (props: GardenDetailsProps): JSX.Element => {
   } else {
     return (
       <main>
-        this should be a Garden bed and its details.
+        Loading ...
       </main>
 
     )

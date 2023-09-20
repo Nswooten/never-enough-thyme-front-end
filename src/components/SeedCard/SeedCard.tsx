@@ -53,11 +53,11 @@ const SeedCard = (props: SeedCardProps): JSX.Element => {
         }
         {profileId === gardenBedDetails.profileId && handleAddSeedToGardenBed &&
           <div className={styles.seedcardcontainer}>
-            <div>{seed.name}</div>
+            <h2>{seed.name}</h2>
             <Link to={`/seeds/${seed.id}`}>
               <Icon vegetable={`image${seed.id}`} />
             </Link>
-            <button onClick={() => handleAddSeedToGardenBed(gardenBedDetails.id.toString(), seed.id.toString())}>
+            <button className={styles.addButton}  onClick={() => handleAddSeedToGardenBed(gardenBedDetails.id.toString(), seed.id.toString())}>
               Add
             </button>
           </div>
