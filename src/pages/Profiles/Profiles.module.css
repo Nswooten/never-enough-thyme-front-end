@@ -3,7 +3,6 @@
   align-items: center;
   flex-direction: column;
   overflow: auto;
-  border: 1px black solid;
 }
 
 .container > p {
@@ -11,10 +10,18 @@
 }
 
 .profilenamecontainer {
-  border: 1px solid black;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.624);
   margin: 20px;
   height: 150px;
   width: 150px;
+}
+
+.profilesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;}
+
+.profileH1 {
+  font-size: 30px;
 }

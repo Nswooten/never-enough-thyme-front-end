@@ -29,17 +29,19 @@ const Profiles = (): JSX.Element => {
   if (!profiles.length) {
     return <main className={styles.container}><h1>Loading...</h1></main>
   }
-
+  console.log(profiles[0])
   return (
     <main className={styles.container}>
       <h1>Profile List</h1>
-      {profiles.map((profile: Profile) => (
-        <div className={styles.profilenamecontainer} key={profile.id}>
+      <div className={styles.profilesContainer}>
+        {profiles.map((profile: Profile) => (
           <Link to={`/profiles/${profile.id}`} >
-            <h1>{profile.name}</h1>
+            <div className={styles.profilenamecontainer} key={profile.id}>
+              <h1 className={styles.profileH1}>{profile.name}</h1>
+            </div>
           </Link>
-        </div>
-      ))}
+        ))}
+      </div>
     </main>
   )
 }
