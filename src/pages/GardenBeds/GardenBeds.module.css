@@ -8,7 +8,7 @@
 border: solid 1px black;
 height: 150px;
 width: 150px;
-margin-top: 20px;
+margin: 20px;
 background-color: rgba(0, 0, 0, 0.547);
 }
 
@@ -21,4 +21,10 @@ background-color: rgba(0, 0, 0, 0.547);
   width: 200px;
   border: 1px solid black;
   background-color: rgba(0, 0, 0, 0.588)
+  
+}
+
+.gardenBedListContainer {
+  display: flex;
+  flex-wrap: wrap;
 }

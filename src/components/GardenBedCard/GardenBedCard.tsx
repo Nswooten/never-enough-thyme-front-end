@@ -1,5 +1,5 @@
 // css
-// import Styles from './GardenBedCard.module.css'
+import styles from './GardenBedCard.module.css'
 
 // types
 import { GardenBed } from "../../types/models"
@@ -13,10 +13,10 @@ const GardenBedCard = (props: GardenBedCardProps): JSX.Element => {
   const { gardenBed } = props
 
   return (
-    <article>
-      <h1>{gardenBed.name}</h1>
-      <h4>{gardenBed.height}ft X {gardenBed.width}ft</h4>
-    </article>
+    <div className={styles.gardenBedCard}>
+      <h1 className={styles.gardenBedCardH1}>{gardenBed.name}</h1>
+      <h4 className={styles.gardenBedCardH4}>{gardenBed.height}ft X {gardenBed.width}ft</h4>
+    </div>
   )
 }
 
