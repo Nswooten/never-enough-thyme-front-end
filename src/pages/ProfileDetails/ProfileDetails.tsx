@@ -13,12 +13,17 @@ import styles from './ProfileDetails.module.css'
 import GardenBedCard from '../../components/GardenBedCard/GardenBedCard'
 
 // types
-import { GardenBed, Profile } from '../../types/models'
+import { GardenBed, Profile, User } from '../../types/models'
 
-const ProfileDetails = (): JSX.Element => {
+interface ProfileDetailsProps {
+  user: User | null;
+}
+
+const ProfileDetails = (props: ProfileDetailsProps): JSX.Element => {
+  const { user } = props
   const [profileDetails, setProfileDetails] = useState<Profile>()
   const { profileId } = useParams()
-
+  console.log(user)
   useEffect((): void => {
     const fetchProfileDetails = async (): Promise<void> => {
       try {
@@ -37,8 +42,16 @@ const ProfileDetails = (): JSX.Element => {
     return (
       <main className={styles.profiledetailscontainer}>
         <h1>{profileDetails.name}'s' Profile</h1>
-        <div className={styles.changepassword}><Link to="/auth/change-password">Change Password</Link></div>
-        <div className={styles.createagardenbed}><Link to="/gardenBeds/new">Create a new Garden Bed</Link></div>
+        {user?.profile.id === parseInt(profileId || "") && (
+          <div>
+            <div className={styles.changepassword}>
+              <Link to="/auth/change-password">Change Password</Link>
+            </div>
+            <div className={styles.createagardenbed}>
+              <Link to="/gardenBeds/new">Create a new Garden Bed</Link>
+            </div>
+          </div>
+        )}
         {profileDetails.gardenBeds.length > 0 &&
           profileDetails.gardenBeds.map((gardenBed: GardenBed) => (
             <Link to={`/gardenBeds/${gardenBed.id}`} key={gardenBed.id}>

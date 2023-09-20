@@ -67,7 +67,7 @@ function App(): JSX.Element {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <ProfileDetails />
+              <ProfileDetails user={user} />
             </ProtectedRoute>
           }
         />
