@@ -70,7 +70,7 @@ const ProfileDetails = (props: ProfileDetailsProps): JSX.Element => {
   } else {
     return (
       <main >
-        <h1>Hello. This should be a profile.</h1>
+        <h1>Loading...</h1>
       </main>
     )
   }

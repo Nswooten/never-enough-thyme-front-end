@@ -36,7 +36,9 @@ const SeedDetails = (): JSX.Element => {
     return (
       <main className={styles.mainseedcontainer}>
         <div className={styles.seeddetailscontainer}>
-          <h1>{seedDetails.name}</h1>
+          <div className={styles.h1Container}>
+            <h1 className={styles.seedDetailsH1}>{seedDetails.name}</h1>
+          </div>
           <div className={styles.imagecontainer}>
             <Icon vegetable={`image${seedDetails.id}`} />
           </div>

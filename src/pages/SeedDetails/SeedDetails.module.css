@@ -16,6 +16,7 @@
   padding-top: 50px;
   margin-top: 5%;
   margin-left: 20%;
+  margin-bottom: 20px;
   
 }
 
@@ -26,4 +27,12 @@ h4 {
 .mainseedcontainer {
 display: flex;
 
+}
+
+.seedDetailsH1 {
+  font-size: 2.5rem;
+}
+
+.h1Container {
+  text-align: center;
 }
