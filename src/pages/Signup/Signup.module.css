@@ -40,6 +40,7 @@ input[type="file"] {
 
 .button {
   margin-left: 16px;
+  color: black;
 }
 
 .form > label:last-of-type {

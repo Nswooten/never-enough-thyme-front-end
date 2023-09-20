@@ -12,16 +12,14 @@ body {
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color: #000000;
-  background-color: #050505;
+  color: #ffff;
+  background-color: #8B5D33;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  background-image: url("../src/assets/soil3.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -32,11 +30,11 @@ body {
 }
 
 h1 {
-  color: rgb(32, 171, 32)
+  color: #6CC551
 }
 
 
 a,
 a:visited {
-  color: #1b3b41
+  color: inherit;
 }

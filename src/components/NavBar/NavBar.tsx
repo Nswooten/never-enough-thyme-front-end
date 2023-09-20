@@ -32,10 +32,11 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <div><NavLink to="" onClick={handleLogout}><FontAwesomeIcon icon={faRightFromBracket} size="2xl" style={{ color: "#ffffff", }} /></NavLink></div>
         </div>
         :
-        <ul>
-          <li><NavLink to="/auth/login">Log In</NavLink></li>
-          <li><NavLink to="/auth/signup">Sign Up</NavLink></li>
-        </ul>
+        null
+        // <ul>
+        //   <li><NavLink to="/auth/login">Log In</NavLink></li>
+        //   <li><NavLink to="/auth/signup">Sign Up</NavLink></li>
+        // </ul>
       }
     </nav>
   )

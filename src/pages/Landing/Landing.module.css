@@ -1,5 +1,55 @@
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px 0;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #6CC551;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  margin: 10px 40px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6CC551;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+
+}
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #315C2B;
+}
+
+.svgContainer {
+  display: flex;
+  min-width: 500px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.svg {
+  fill: #6CC551;
 }
