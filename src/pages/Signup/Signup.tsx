@@ -132,9 +132,9 @@ const Signup = (props: AuthPageProps): JSX.Element => {
           />
         </label>
         <div>
-          <Link to="/">Cancel</Link>
+          <Link to="/"><button className={styles.signUpButton}>Cancel</button></Link>
           <button
-            className={styles.button}
+            className={styles.signUpButton}
             disabled={isFormInvalid() || isSubmitted}
           >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}

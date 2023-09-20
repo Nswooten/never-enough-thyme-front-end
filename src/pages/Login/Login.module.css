@@ -34,11 +34,26 @@ input {
   margin-bottom: 8px;
 }
 
-.button {
-  margin-left: 16px;
-  color: black;
-}
+
 
 .form > label:last-of-type {
   margin-bottom: 16px;
+}
+
+.loginButton {
+  margin: 10px 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #6CC551;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  color: black;
+}
+
+
+.loginButton:hover {
+  background-color: #315C2B;
 }
